@@ -782,7 +782,7 @@ Let's try.
 Actions:
  - created an AMI of my instance using [this](https://amzn.to/2MgqZo3) page
  - then from the EC2 dashboard: Actions>Instance State>Stop
- - then from the EC2 dashboard: Actions>Instance Settings>Change Instance Type and selected `t2.small`
+ - then from the EC2 dashboard: Actions>Instance Settings>Change Instance Type and selected `t2.large`
  - then from the EC2 dashboard: Actions>Instance State>Start
  - then reloaded new `IPv4 Public IP` in a broswer and checked pages:
     - / works
