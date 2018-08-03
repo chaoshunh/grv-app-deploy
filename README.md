@@ -738,7 +738,17 @@ The output above _seems ok_ but not sure.
 Replacing app.wsgi content with:
 
 ```python
+import sys
 
+def application(environ, start_response):
+    status = '200 OK'
+    output = u'wsgi.multithread = %s' % repr(environ['wsgi.multithread'])
+
+    response_headers = [('Content-type', 'text/plain'),
+                        ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+
+    return [output.encode('UTF-8')]
 ```
 
 From [here](http://bit.ly/2Mcap8G)
