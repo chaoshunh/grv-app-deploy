@@ -51,8 +51,8 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     - Then build the source code with 
     - `make`
     - Then install the Apache module into the standard location for Apache modules as dictated by Apache for your installation, run:
-    - (read next step *before* doing this)! `~make install~` ~or~ `sudo make install` ~if permission denied~
-25. `CMMI` or `./configure` + `make` + `sudo make install` **will probably not install the `mod_wsgi` python library in the right place. With the python 3.6 env activated and inside the mod_wsgi install dir, do:**
+    - `~make install~` ~or~ `sudo make install` ~if permission denied~
+25. `CMMI` or `./configure` + `make` + `sudo make install` **will probably not install the `mod_wsgi` python library in the right place. So _additionally_ With the python 3.6 env activated and inside the mod_wsgi install dir, do:**
     - `$ python setup.py install`
 26. create a wsgi file with:
     - `$ cd ..` to come back into the correct folder and check paths:
