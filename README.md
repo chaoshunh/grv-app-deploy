@@ -34,7 +34,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     - `$ cd cloned_project`
     - `$ virtualenv py36 --python=python3.6` to create a Python 3.6 environment - Python 3.6 is required for altair
 15. Activate the environment (use `$ deactivate` to exit the environment).
-    `$ . py366/bin/activate`
+    `$ . py36/bin/activate`
 16. Check python version with `$ python -V` output: `Python 3.6.6`
 17. Install Flask and other required modules: (Note: You do not need to use pip3 or python3 within the virtualenv since it is already a Python3 virtualenv)
     - `$ pip install Flask matplotlib numpy pandas altair bokeh "holoviews[recommended]"`
