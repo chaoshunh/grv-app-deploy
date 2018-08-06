@@ -46,6 +46,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
 22. From [mod_wsgi docs](http://bit.ly/2NKJ11N), Python must be 3.3 or later, we have 3.6.6 so *should be ok*.
 23. Source code for mod_wsgi is [here](http://bit.ly/2NEPNX1), download the latest version and unpack it with `$ tar xvfz mod_wsgi-X.Y.tar.gz` replacing `X.Y` with version number. So for me: `$ tar xvfz mod_wsgi-4.6.4.tar.gz`
 24. To setup the package ready for building run the “configure” script from within the source code directory:
+    - `cd mod_wsgi-4.6.4`
     - `./configure`
     - Then build the source code with 
     - `make`
