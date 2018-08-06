@@ -52,7 +52,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     - `make`
     - Then install the Apache module into the standard location for Apache modules as dictated by Apache for your installation, run:
     - (read next step *before* doing this)! `~make install~` ~or~ `sudo make install` ~if permission denied~
-25. `sudo make install` **will probably not install the `mod_wsgi` python library in the right place. With the python 3.6 env activated and inside the mod_wsgi install dir, do:**
+25. `CMMI` or `./configure` + `make` + `sudo make install` **will probably not install the `mod_wsgi` python library in the right place. With the python 3.6 env activated and inside the mod_wsgi install dir, do:**
     - `$ python setup.py install`
 26. create a wsgi file with:
     - `$ cd ..` to come back into the correct folder and check paths:
@@ -64,7 +64,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     ```python
     activate_this = '/home/ubuntu/grv-app-deploy/py36/bin/activate_this.py'
     with open(activate_this) as f:
-	    exec(f.read(), dict(__file__=activate_this))
+        exec(f.read(), dict(__file__=activate_this))
 
     import sys
     import logging
@@ -96,15 +96,23 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
         Allow from all
     </Directory>
     ```
-33. Restart the Server:
+33. get *.npy files from S3 into `~/grv-app-deploy/static` with:
+    - `$ wget https://s3.amazonaws.com/grvappbucket/f1_array_flat.npy`
+    - `mv f1_array_flat.npy.1 f1_array_flat.npy`
+    - `$ wget https://s3.amazonaws.com/grvappbucket/f2_array_flat.npy`
+    - `mv f2_array_flat.npy.1 f2_array_flat.npy`
+    - `$ wget https://s3.amazonaws.com/grvappbucket/f3_array_flat.npy`
+    - `mv f3_array_flat.npy.1 f3_array_flat.npy`
+    - check/set permissions with `$ sudo chmod +755 f1_array_flat.npy f2_array_flat.npy f3_array_flat.npy`
+34. Restart the Server:
     `$ sudo apachectl restart`
-34. **Change ownership and permissions on app folder**, run:
+35. **Change ownership and permissions on app folder**, run:
     - `$ sudo chown -R www-data:www-data /var/www/html/`
     **Always double check inside grv-app-deploy and subdirectories that AT LEAST, the group of every file is www-data and that group members have rwx permission.**
-35. use `$ sudo bash -c 'echo > /var/log/apache2/error.log'` to clean error log and `$ sudo apachectl restart` to restart the server
-35. check the IPv4 Public IP at e.g. `54.84.76.221`
-36. check the logs at: `vim /var/log/apache2/error.log`
-37. ensure the absolute path on the server is used: `/var/www/html/grv-app-deploy/static`
+36. use `$ sudo bash -c 'echo > /var/log/apache2/error.log'` to clean error log and `$ sudo apachectl restart` to restart the server
+37. check the IPv4 Public IP at e.g. `54.84.76.221`
+38. check the logs at: `vim /var/log/apache2/error.log`
+39. ensure the absolute path on the server is used: `/var/www/html/grv-app-deploy/static`
     
 **This is the end of the new procedure.**
 
