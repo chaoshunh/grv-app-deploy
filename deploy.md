@@ -55,7 +55,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     - html path='/var/www/html/grv-app-deploy'
     - `$ vim app.wsgi`
 27. Paste this code into the *.wsgi file:
-    ```
+    ```python
     activate_this = '/home/ubuntu/grv-app-deploy/py36/bin/activate_this.py'
     with open(activate_this) as f:
         exec(f.read(), dict(__file__=activate_this))
