@@ -55,6 +55,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
     - html path='/var/www/html/grv-app-deploy'
     - `$ vim app.wsgi`
 27. Paste this code into the *.wsgi file:
+    
     ```python
     activate_this = '/home/ubuntu/grv-app-deploy/py36/bin/activate_this.py'
     with open(activate_this) as f:
@@ -68,6 +69,7 @@ Modifications adapted thanks to contributions from [Diego Castañeda's fork](htt
 
     from grvapp import app as application
     ```
+    
 28. Create a symlink so that the project directory appears in /var/www/html
     - `$ sudo ln -sT ~/grv-app-deploy /var/www/html/grv-app-deploy`
 29. **In my case, I had to add the apache config file that would let apache load the wsgi module:**
