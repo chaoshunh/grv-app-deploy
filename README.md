@@ -2,7 +2,10 @@
 
 This repo is a self-contained copy of the working app.
 
-It works locally, the aim is to deploy it on Amazon EC2
+This readme is the step-by-step procedure followed including errors and wrong paths. 
+It is kept as a learning material. 
+
+The final procedure is detailed in [deploy.md](./deploy.md)
 
 ## Procedure
 
